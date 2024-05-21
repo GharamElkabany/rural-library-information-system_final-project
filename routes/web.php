@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BookController;
@@ -32,8 +33,9 @@ Route::middleware(['auth', 'role:supervisor'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('categories', CategoryController::class);
-    Route::resource('books', BookController::class);
-    Route::resource('members', MemberController::class);
-    Route::resource('borrowings', BorrowingController::class);
+    Route::resource('/categories', CategoryController::class);
+    Route::resource('/books', BookController::class);
+    Route::resource('/members', MemberController::class);
+    Route::resource('/borrowings', BorrowingController::class);
+    Route::resource('/supervisor', SupervisorController::class);
 });

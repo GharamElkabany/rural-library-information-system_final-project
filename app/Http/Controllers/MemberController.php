@@ -12,7 +12,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-        //
+        $members = Member::all();
+        return view('members.index', compact('members'));
     }
 
     /**
@@ -20,7 +21,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        //
+        return view('members.create');
     }
 
     /**
@@ -28,7 +29,13 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Member::create($request->validate([
+            'name' => 'required',
+            'ic_no' => 'required|unique:members',
+            'address' => 'required',
+            'contact_info' => 'required'
+        ]));
+        return redirect()->route('members.index');
     }
 
     /**

@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Member extends Model
+class Supervisor extends Model
 {
     use HasFactory;
 
-    public function borrowings()
-    {
-        return $this->hasMany(Borrowing::class);
-    }
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
 }
-?>

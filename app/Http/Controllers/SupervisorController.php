@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Supervisor;
+use App\Models\Volunteer;
 
-class UserController extends Controller
+class SupervisorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $users = User::all();
-        return view('users.index', compact('users'));
+        $volunteers = Volunteer::all();
+        return view('supervisor.index', compact('volunteers'));
     }
 
     /**
@@ -21,7 +22,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        return view('supervisor.create');
     }
 
     /**
@@ -31,20 +32,19 @@ class UserController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email|unique:Volunteers',
             'password' => 'required|min:6',
-            'role' => 'required|in:volunteer,supervisor'
         ]);
         $validated['password'] = bcrypt($validated['password']);
-        User::create($validated);
-        return redirect()->route('users.index');
+        Volunteer::create($validated);
+        return redirect()->route('supervisor.index');
     
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(Volunteer $Volunteer)
     {
         //
     }
@@ -52,7 +52,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(Volunteer $Volunteer)
     {
         //
     }
@@ -60,7 +60,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Volunteer $Volunteer)
     {
         //
     }
@@ -68,7 +68,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(Volunteer $Volunteer)
     {
         //
     }

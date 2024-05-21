@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Borrowing extends Model
 {
     use HasFactory;
+    protected $fillable = ['book_id', 'member_id', 'borrow_date', 'return_date'];
 
     public function book()
     {
@@ -19,3 +20,4 @@ class Borrowing extends Model
         return $this->belongsTo(Member::class);
     }
 }
+?>
