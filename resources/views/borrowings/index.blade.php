@@ -9,7 +9,10 @@
             <button type="submit">Search</button>
         </form>
 
-        <a href="{{ route('borrowings.create') }}" class="btn btn-success">Add New Borrowing</a>
+        <div>
+            <a href="{{ route('borrowings.create') }}" class="btn btn-success" style="margin-right: 10px;">Add New Borrowing</a>
+            <a href="{{ route('volunteer.index') }}" class="btn btn-secondary">Go Back</a>
+        </div>
     </div>
     <table class="table mt-3">
         <thead>

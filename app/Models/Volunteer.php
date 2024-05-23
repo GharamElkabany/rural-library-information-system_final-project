@@ -12,6 +12,6 @@ class Volunteer extends Model
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'password', 
     ];
 }

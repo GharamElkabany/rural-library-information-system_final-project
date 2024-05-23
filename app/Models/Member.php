@@ -9,6 +9,13 @@ class Member extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'ic_no',
+        'address',
+        'contact_info', 
+    ];
+
     public function borrowings()
     {
         return $this->hasMany(Borrowing::class);
