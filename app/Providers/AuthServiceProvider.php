@@ -28,5 +28,15 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('isSupervisor', function(User $user) {
             return $user->userLevel == 0;
         });
+
+        // Define Volunteer Gate
+        Gate::define('isVolunteer', function (User $user) {
+            return $user->userLevel == 1;  // assuming 1 is volunteer
+        });
+
+        // Define access to member registration
+        Gate::define('register-member', function (User $user) {
+            return $user->userLevel == 1;  // assuming 1 is volunteer
+        });
     }
 }

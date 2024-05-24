@@ -7,9 +7,11 @@
             <div class="col">
                 <h1>List of Volunteers</h1>
             </div>
+            @can('isSupervisor')  <!-- Ensures only supervisors can see this button -->
             <div class="col-auto">
                 <a href="{{ route('supervisor.create') }}" class="btn btn-success">Add New Volunteer</a>
             </div>
+            @endcan
         </div>
     </div>
     <div class="card-body">
@@ -30,7 +32,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="4">No volunteers found.</td>
+                       
                     </tr>
                 @endforelse
             </tbody>
