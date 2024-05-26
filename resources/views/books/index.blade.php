@@ -3,9 +3,11 @@
 @section('content')
 <div class="container">
     <h1>Books</h1>
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <a href="{{ route('books.create') }}" class="btn btn-success">Add New Book</a>
-    </div>
+    <div style="text-align: right;">
+    <a href="{{ route('books.create') }}" class="btn btn-success" style="margin-right: 10px;">Add New Book</a>
+    <a href="{{ route('volunteer.index') }}" class="btn btn-secondary">Go Back</a>
+</div>
+
     <table class="table mt-3">
         <thead>
             <tr>

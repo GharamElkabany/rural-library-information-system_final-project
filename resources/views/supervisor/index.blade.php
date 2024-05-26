@@ -11,6 +11,9 @@
             <div class="col-auto">
                 <a href="{{ route('supervisor.create') }}" class="btn btn-success">Add New Volunteer</a>
             </div>
+            <div class="col-auto">
+                <a href="{{ route('volunteer.index') }}" class="btn btn-success">View Members</a>
+            </div>
             @endcan
         </div>
     </div>

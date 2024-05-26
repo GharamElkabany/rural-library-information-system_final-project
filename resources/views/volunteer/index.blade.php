@@ -20,6 +20,12 @@
                     </div>
                 </div>
                 @endcan
+                
+                @can('isSupervisor')
+                <div style="text-align: right;">
+                    <a href="{{ route('supervisor.index') }}" class="btn btn-secondary">Go Back</a>
+                </div>
+                @endcan    
             </div>
         </div>
     </div>

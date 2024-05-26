@@ -55,7 +55,8 @@ class SupervisorController extends Controller
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => Hash::make($validatedData['password']),
-            // You might want to assign a specific role or permissions here
+            'userLevel' => 1,  
+            'userType' => null,
         ]);
     
         // Create Volunteer and link to User

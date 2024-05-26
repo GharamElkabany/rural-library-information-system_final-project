@@ -36,6 +36,9 @@ class UserController extends Controller
             'role' => 'required|in:volunteer,supervisor'
         ]);
         $validated['password'] = bcrypt($validated['password']);
+        $validated['userLevel'] = $validated['userLevel'] ?? 1;
+        $validated['userType'] = $validated['userType'] ?? null;
+        
         User::create($validated);
         return redirect()->route('users.index');
     
