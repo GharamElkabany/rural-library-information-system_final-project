@@ -16,7 +16,7 @@ class BooksTableSeeder extends Seeder
             'author' => 'F. Scott Fitzgerald',
             'publisher_name' => 'Charles Scribner\'s Sons',
             'published_year' => '1925',
-            'category_id' => 1  // Assuming '1' is the ID for Novels
+            'category_id' => 1  
         ]);
 
         Book::factory()->count(10)->create();

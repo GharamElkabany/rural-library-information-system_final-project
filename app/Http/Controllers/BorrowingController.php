@@ -9,9 +9,6 @@ use App\Models\Member;
 
 class BorrowingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(Request $request)
     {
         $query = Borrowing::with(['book', 'member']);
@@ -29,9 +26,6 @@ class BorrowingController extends Controller
         return view('borrowings.index', compact('borrowings'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         // Fetch all books and members to populate select dropdowns
@@ -53,25 +47,16 @@ class BorrowingController extends Controller
         return redirect()->route('borrowings.index')->with('success', 'New borrowing record created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Borrowing $borrowing)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Borrowing $borrowing)
     {
         return view('borrowings.edit', compact('borrowing'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Borrowing $borrowing)
     {
         $validated = $request->validate([
@@ -82,9 +67,6 @@ class BorrowingController extends Controller
         return redirect()->route('borrowings.index')->with('success', 'Return date updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Borrowing $borrowing)
     {
         //
